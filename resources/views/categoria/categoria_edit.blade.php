@@ -8,7 +8,7 @@
                 <div class="card-header"> {{ __('DASHBOARD')}}</div>
 
 
-                    <!-- AVISO DE ERRO CASO NAO PASSE NA VALIDAÇÃO -->
+                    <!-- AVISO DE ERRO CASO NAO PASSE NA VALIDAÇÃO
 
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -18,18 +18,19 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        @endif
+                        @endif -->
 
                     <!-- INICIO DO FORM -->
 
 
 
-                    <form method="POST" action=" {{ URL('/categoria') }}">
+                    <form method="POST" action="{{ URL('/categoria/' . $categoria->id ) }}">
                         
                         @csrf
+                        @method('PUT')
 
                         <label for="exampleInputEmail">Nome</label><br>
-                        <input type="text" class="form-control" id="nome" name="nome" placholder="Digite o nome da categoria"><br>
+                        <input type="text" class="form-control" value="{{ $categoria->nome }}" id="nome" name="nome" placholder="Digite o nome da categoria"><br>
                         
                         <input type="submit" value="ENVIAR">
                     </form>
