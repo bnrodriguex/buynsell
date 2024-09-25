@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Categoria;
+use App\Models\Anuncio;
 
 //TROCAR TUDO P/ ANUNCIO -> 17:52 EM CRUD POSTAGEM INDEX CREATE SHOW.
 
-class CategoriaController extends Controller
+class AnuncioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categorias = Categoria::orderBy('id', 'ASC')->get();
+        $anuncios = Anuncio::orderBy('id', 'ASC')->get();
         
-       //dd($categorias);
+       //dd($anuncios);
 
-        return view('categoria.categoria_index', compact('categorias'));
+        return view('anuncio.anuncio_index', compact('anuncios'));
     }
 
     /**
@@ -27,7 +27,7 @@ class CategoriaController extends Controller
     public function create()
     {
         // dd('OLÁ');
-        return view ('categoria.categoria_create');
+        return view ('anuncio.anuncio_create');
     }
 
     /**
@@ -42,11 +42,11 @@ class CategoriaController extends Controller
 
         ]);
 
-        $categoria = new Categoria();
-        $categoria->nome = $request->nome;
-        $categoria-> save();
+        $anuncio = new Anuncio();
+        $anuncio->nome = $request->nome;
+        $anuncio-> save();
 
-        return redirect()->route('categoria.index')->with('mensagem', 'Categoria cadastrada com sucesso!');
+        return redirect()->route('anuncio.index')->with('mensagem', 'Anuncio cadastrada com sucesso!');
     }
 
     /**
@@ -55,8 +55,8 @@ class CategoriaController extends Controller
     public function show(string $id)
     {
         // dd('show:'. $id);
-        $categoria = Categoria::find($id);
-        return view('categoria.categoria_show', compact('categoria'));
+        $anuncio = Anuncio::find($id);
+        return view('anuncio.anuncio_show', compact('anuncio'));
     }
 
     /**
@@ -64,8 +64,8 @@ class CategoriaController extends Controller
      */
     public function edit(string $id)
     {
-        $categoria = Categoria::find($id);
-        return view('categoria.categoria_edit', compact('categoria'));
+        $anuncio = Anuncio::find($id);
+        return view('anuncio.anuncio_edit', compact('anuncio'));
 
     }
 
@@ -82,11 +82,11 @@ class CategoriaController extends Controller
 
         ]);
 
-        $categoria = Categoria::find($id);
-        $categoria->nome =  $request->nome;
-        $categoria->save();
+        $anuncio = Anuncio::find($id);
+        $anuncio->nome =  $request->nome;
+        $anuncio->save();
 
-        return redirect()->route('categoria.index')->with('mensagem', 'Categoria alterada com sucesso!');
+        return redirect()->route('anuncio.index')->with('mensagem', 'Anuncio alterada com sucesso!');
     }
 
     /**
@@ -94,9 +94,9 @@ class CategoriaController extends Controller
      */
     public function destroy(string $id)
     {
-        $categoria = Categoria::find($id);
-        $categoria->delete();
+        $anuncio = Anuncio::find($id);
+        $anuncio->delete();
 
-        return redirect()->route('categoria.index')->with('mensagem', 'Categoria excluida com sucesso!');
+        return redirect()->route('anuncio.index')->with('mensagem', 'Anuncio excluida com sucesso!');
     }
 }
