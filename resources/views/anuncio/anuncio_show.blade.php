@@ -7,7 +7,7 @@
             <div class="card"> 
                 <div class="card-header"> {{ __('DASHBOARD')}}</div>
 
-                    <p><strong> Nome: </strong> {{ $anuncio->nome }}</p>
+                    <p><strong> Nome: </strong> {{ $anuncio->titulo }}</p>
                     <p><strong> Criação: </strong> {{ $anuncio->created_at }}</p>
 
             </div>   

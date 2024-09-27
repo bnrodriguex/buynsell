@@ -30,7 +30,7 @@
                         @method('PUT')
 
                         <label for="exampleInputEmail">Nome</label><br>
-                        <input type="text" class="form-control" value="{{ $anuncio->nome }}" id="nome" name="nome" placholder="Digite o nome do anuncio"><br>
+                        <input type="text" class="form-control" value="{{ $anuncio->titulo }}" id="titulo" name="titulo" placholder="Digite o titulo do anuncio"><br>
                         
                         <input type="submit" value="ENVIAR">
                     </form>

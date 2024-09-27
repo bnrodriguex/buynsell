@@ -38,12 +38,12 @@ class AnuncioController extends Controller
         // dd($request->all());,
 
         $validated = $request->validate([
-            'nome' => 'required|min:5',
+            'titulo' => 'required|min:5',
 
         ]);
 
         $anuncio = new Anuncio();
-        $anuncio->nome = $request->nome;
+        $anuncio->titulo = $request->titulo;
         $anuncio-> save();
 
         return redirect()->route('anuncio.index')->with('mensagem', 'Anuncio cadastrada com sucesso!');
@@ -78,12 +78,12 @@ class AnuncioController extends Controller
         
         
         $validated = $request->validate([
-            'nome' => 'required|min:5',
+            'titulo' => 'required|min:5',
 
         ]);
 
         $anuncio = Anuncio::find($id);
-        $anuncio->nome =  $request->nome;
+        $anuncio->titulo =  $request->titulo;
         $anuncio->save();
 
         return redirect()->route('anuncio.index')->with('mensagem', 'Anuncio alterada com sucesso!');

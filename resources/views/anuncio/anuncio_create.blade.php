@@ -29,7 +29,7 @@
                         @csrf
 
                         <label for="exampleInputEmail">Nome</label><br>
-                        <input type="text" class="form-control" id="nome" name="nome" placholder="Digite o nome do anuncio"><br>
+                        <input type="text" class="form-control" id="titulo" name="titulo" placholder="Digite o titulo do anuncio"><br>
                         
                         <input type="submit" value="ENVIAR">
                     </form>

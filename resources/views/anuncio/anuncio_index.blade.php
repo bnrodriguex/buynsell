@@ -26,14 +26,14 @@
                     <table class='table'>
                             <tr>
                                 <th>ID</th>
-                                <th>Nome</th>
+                                <th>Título</th>
                                 <th class='text-center'>Ações</th>
                             </tr>
 
                             @foreach($anuncios as $value)
                             <tr>
                                 <td>{{ $value->id}}</td>
-                                <td>{{ $value->nome}}</td>
+                                <td>{{ $value->titulo}}</td>
                                 <td class='d-flex justify-content-around'>
                                 <a href="{{ url('/anuncio/' . $value->id) }}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Visualizar</a>
 
