@@ -23,42 +23,24 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// ---- O AUTH SENDO USADO MEDIANTE AO DOCS DO LARAVEL -----
+Route::middleware(['auth'])->group(function () {
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
 
-// --------- CATEGORIAS --------------
+    // --------- CATEGORIAS --------------
 
 
-Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
+    Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index')->middleware('auth');
 
-Route::get('/categoria/create', [CategoriaController::class, 'create'])->name('categoria.create');
+    Route::get('/categoria/create', [CategoriaController::class, 'create'])->name('categoria.create');
 
-Route::post('/categoria', [CategoriaController::class, 'store'])->name('categoria.store');
+    Route::post('/categoria', [CategoriaController::class, 'store'])->name('categoria.store');
 
-Route::get('/categoria/{id}/edit', [CategoriaController::class, 'edit'])->name('categoria.edit');
+    Route::get('/categoria/{id}/edit', [CategoriaController::class, 'edit'])->name('categoria.edit');
 
-Route::get('/categoria/{id}', [CategoriaController::class, 'show'])->name('categoria.show');
+    Route::get('/categoria/{id}', [CategoriaController::class, 'show'])->name('categoria.show');
 
-Route::put('/categoria/{id}', [CategoriaController::class, 'update'])->name('categoria.update');
-
-Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])->name('categoria.destroy');
-
-
-// --------- ANÚNCIOS --------------
-
-
-Route::get('/anuncio', [AnuncioController::class, 'index'])->name('anuncio.index');
-
-Route::get('/anuncio/create', [AnuncioController::class, 'create'])->name('anuncio.create');
-
-Route::post('/anuncio', [AnuncioController::class, 'store'])->name('anuncio.store');
-
-Route::get('/anuncio/{id}/edit', [AnuncioController::class, 'edit'])->name('anuncio.edit');
-
-Route::get('/anuncio/{id}', [AnuncioController::class, 'show'])->name('anuncio.show');
-
-Route::put('/anuncio/{id}', [AnuncioController::class, 'update'])->name('anuncio.update');
-
-Route::delete('/anuncio/{id}', [AnuncioController::class, 'destroy'])->name('anuncio.destroy');
