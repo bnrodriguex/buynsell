@@ -4,7 +4,7 @@
 
 <!-- -------- ABERTURA DO EDITOR RICO ----------- -->
 <link rel="stylesheet" href="{{url('/richtexteditor/rte_theme_default.css')}}" />
-<script type="text/javascript" src="{{url('/richtexteditor/rte.js')}"></script>
+<script type="text/javascript" src="{{url('/richtexteditor/rte.js')}}"></script>
 <script type="text/javascript" src="{{url('/richtexteditor/plugins/all_plugins.js') }}"></script>
 
 <div class="container">
@@ -42,7 +42,7 @@
 
                     <!--  FIM DO FORM  -->
 
-                    <!-- QUANDO FOR ADD O ANUNCIO_SHOW_BLADE.PHP LEMBRE DE COLOCAR <p><strong> Conteúdo</strong> {!! $postagem->conteudo !!} </p>
+                    <!-- QUANDO FOR ADD O ANUNCIO_SHOW_BLADE.PHP LEMBRE DE COLOCAR <p><strong> Conteúdo</strong> </p>
                         E NO ID DENTRO DO FORM (AONDE ESTÁ O NOSSO QUERIDO CONTEUDO) TROQUE PARA : "inp_editor1"  IGUAL O SCRIPT QUE FECHA O EDITOR RICO!
                     -->
 

@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index')->middleware('auth');
+                                                                            //padronização
 
     Route::get('/categoria/create', [CategoriaController::class, 'create'])->name('categoria.create');
 
