@@ -20,6 +20,17 @@ class CategoriaSeeder extends Seeder
             'nome' => 'Eletronicos',
             
         ]);
+        DB::table('categorias')->insert([
+            // 'id' => $request
+            'nome' => 'Móveis',
+            
+        ]);
+        DB::table('categorias')->insert([
+            // 'id' => $request
+            'nome' => 'Eletrodomésticos',
+            
+        ]);
+    
     
     }
 }
