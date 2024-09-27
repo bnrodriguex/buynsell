@@ -44,9 +44,3 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/categoria/{id}', [CategoriaController::class, 'show'])->name('categoria.show');
 
-    Route::put('/categoria/{id}', [CategoriaController::class, 'update'])->name('categoria.update');
-
-    Route::delete('/categoria/{id}',[CategoriaController::class, 'destroy'])->name('categoria.destroy');
-
-
-});
