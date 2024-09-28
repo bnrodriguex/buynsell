@@ -5,7 +5,7 @@
 <!-- -------- ABERTURA DO EDITOR RICO ----------- -->
 
 <link rel="stylesheet" href="{{url('/richtexteditor/rte_theme_default.css')}}" />
-<script type="text/javascript" src="{{url('/richtexteditor/rte.js')}"></script>
+<script type="text/javascript" src="{{url('/richtexteditor/rte.js')}}"></script>
 <script type="text/javascript" src="{{url('/richtexteditor/plugins/all_plugins.js') }}"></script>
 
 <div class="container">
@@ -13,9 +13,6 @@
         <div class="col-md-8">
             <div class="card"> 
                 <div class="card-header"> {{ __('DASHBOARD')}}</div>
-
-
-                    <!-- AVISO DE ERRO CASO NAO PASSE NA VALIDAÇÃO
 
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -25,9 +22,9 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        @endif -->
+                        @endif
 
-                    <!-- INICIO DO FORM -->
+                    <!-- INICIO DO FORM
 
 
 
