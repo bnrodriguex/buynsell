@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Anuncio;
+use App\Models\Categoria;
 
-//TROCAR TUDO P/ ANUNCIO -> 17:52 EM CRUD POSTAGEM INDEX CREATE SHOW.
+
 
 class AnuncioController extends Controller
 {
@@ -27,7 +28,8 @@ class AnuncioController extends Controller
     public function create()
     {
         // dd('OLÁ');
-        return view ('anuncio.anuncio_create');
+        $categorias = Categoria::get();
+        return view ('anuncio.anuncio_create', compact('categorias'));
     }
 
     /**

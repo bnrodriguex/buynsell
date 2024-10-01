@@ -11,46 +11,57 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card"> 
+            <div class="card">
                 <div class="card-header"> {{ __('DASHBOARD')}}</div>
 
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <il>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <il>{{ $error }}</li>
+                            @endforeach
+                    </ul>
+                </div>
+                @endif
 
-                    <!-- INICIO DO FORM
+                <!-- INICIO DO FORM -->
 
 
 
-                    <form method="POST" action="{{ URL('/categoria/' . $categoria->id ) }}">
-                        
-                        @csrf
-                        @method('PUT')
-
-                        <label for="exampleInputEmail">Nome</label><br>
-                        <input type="text" class="form-control" value="{{ $categoria->nome }}" id="nome" name="nome" placholder="Digite o nome da categoria"><br>
-                        
-                        <input type="submit" value="ENVIAR">
-                    </form>
+                     <form method='POST' action="{{ URL('/anuncio' . $postagem->id) }}">
+                    @method('PUT')
+                    @csrf
+                    <label for="cars">Escolha uma categoria:</label><br>
+                    <select name="categoria_id"  class="form-control"id="categoria">
+                        @foreach ($categorias as $value)
+                            @if($value->id == $postagem->categoria_id)
+                                <option selected="selected" value="{{ $value->id }}">{{ $value->nome }}</option>
+                            @else
+                                <option value="{{ $value->id }}">{{ $value->nome }}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Título</label>
+                        <input type="text" name="titulo" value="{{ $postagem->titulo }}"class="form-control" placeholder="Digite o nome da postagem">
+                        <label for="exampleInputEmail1">Conteúdo</label>
+                        <textarea id="conteudo" class="form-control" name="conteudo" rows="4" cols="50">{{ $postagem->conteudo }}</textarea>
+                    </div>
+                    <input type="submit" value="ENVIAR">
+                </form>
 
                     <!--  FIM DO FORM  -->
 
 
 
-                    <!-- -------- FECHAMENTO DO EDITOR RICO------- -->
-                     
-                    <script>
-                        var editor1 = new RichTextEditor("#inp_editor1");
-                    </script>
+                <!-- -------- FECHAMENTO DO EDITOR RICO------- -->
 
-            </div>   
+                <script>
+                    var editor1 = new RichTextEditor("#inp_editor1");
+                </script>
+
+            </div>
         </div>
     </div>
-</div>  
+</div>
 @endsection
