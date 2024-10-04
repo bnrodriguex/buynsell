@@ -36,6 +36,7 @@
 
                         <label for="exampleInputEmail">Nome</label><br>
                         <input type="text" class="form-control" id="nome" name="nome" placholder="Digite o nome da categoria"><br>
+
                         
                         <input type="submit" value="ENVIAR">
                     </form>

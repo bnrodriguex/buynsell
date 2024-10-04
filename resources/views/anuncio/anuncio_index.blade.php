@@ -35,11 +35,11 @@
                                 <td>{{ $value->id}}</td>
                                 <td>{{ $value->titulo}}</td>
                                 <td class='d-flex justify-content-around'>
-                                <a href="{{ url('/anuncio/' . $value->id) }}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Visualizar</a>
+                                <a href="{{ url('/anuncio' . $value->id) }}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Visualizar</a>
 
-                                <a href="{{ url('/anuncio/' . $value->id) . '/edit' }}" class="btn btn-warning btn-sm active" role="button" aria-pressed="true">Editar</a>
+                                <a href="{{ url('/anuncio' . $value->id) . '/edit' }}" class="btn btn-warning btn-sm active" role="button" aria-pressed="true">Editar</a>
 
-                                <form method='POST' action="{{ url('/anuncio/' . $value->id) }}" onsubmit="return ConfirmDelete()" >
+                                <form method='POST' action="{{ url('/anuncio' . $value->id) }}" onsubmit="return ConfirmDelete()" >
                                     @method('DELETE')
                                     @csrf
                                     <input type='submit' class='btn btn-danger btn-sm active' value='Excluir'>

@@ -2,11 +2,6 @@
 
 @section('content')
 
-<!-- -------- ABERTURA DO EDITOR RICO ----------- -->
-
-<link rel="stylesheet" href="{{url('/richtexteditor/rte_theme_default.css')}}" />
-<script type="text/javascript" src="{{url('/richtexteditor/rte.js')}}"></script>
-<script type="text/javascript" src="{{url('/richtexteditor/plugins/all_plugins.js') }}"></script>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -28,13 +23,13 @@
 
 
 
-                     <form method='POST' action="{{ URL('/anuncio' . $postagem->id) }}">
+                     <form method='POST' action="{{ URL('/categoria' . $categoria->id) }}">
                     @method('PUT')
                     @csrf
                     <label for="cars">Escolha uma categoria:</label><br>
                     <select name="categoria_id"  class="form-control"id="categoria">
-                        @foreach ($categorias as $value)
-                            @if($value->id == $postagem->categoria_id)
+                         @foreach ($categoria as $value)
+                            @if($value->id == $categorias->categoria_id)
                                 <option selected="selected" value="{{ $value->id }}">{{ $value->nome }}</option>
                             @else
                                 <option value="{{ $value->id }}">{{ $value->nome }}</option>
@@ -42,10 +37,8 @@
                         @endforeach
                     </select>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Título</label>
-                        <input type="text" name="titulo" value="{{ $postagem->titulo }}"class="form-control" placeholder="Digite o nome da postagem">
-                        <label for="exampleInputEmail1">Conteúdo</label>
-                        <textarea id="conteudo" class="form-control" name="conteudo" rows="4" cols="50">{{ $postagem->conteudo }}</textarea>
+                        <label for="exampleInputEmail1">Nome</label>
+                        <input type="text" name="titulo" value="{{ $categoria->titulo }}"class="form-control" placeholder="Digite o nome da categoria">
                     </div>
                     <input type="submit" value="ENVIAR">
                 </form>
@@ -54,11 +47,6 @@
 
 
 
-                <!-- -------- FECHAMENTO DO EDITOR RICO------- -->
-
-                <script>
-                    var editor1 = new RichTextEditor("#inp_editor1");
-                </script>
 
             </div>
         </div>

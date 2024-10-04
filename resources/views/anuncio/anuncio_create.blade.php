@@ -38,8 +38,10 @@
                             <option value="{{ $value->id }}">{{ $value->nome }}</option>
                             @endforeach
                         </select>
+                        
                         <label for="exampleInputEmail1">Título</label>
                         <input type="text" name="titulo" class="form-control" placeholder="Digite o nome do Anúncio">
+
                         <label for="exampleInputEmail1">Conteúdo</label>
                         <textarea id="conteudo" class="form-control" name="conteudo" rows="4" cols="50"></textarea>
                     </div>
