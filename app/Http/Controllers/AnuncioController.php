@@ -31,7 +31,7 @@ class AnuncioController extends Controller
         // dd('OLÁ');
         $anuncios = Anuncio::orderBy('titulo', 'ASC')->get();
         $categorias = Categoria::get();
-        return view ('anuncio.anuncio_create', compact('categorias'));  
+        return view ('anuncio.anuncio_create', compact('categorias', 'anuncios'));  
     }
 
     /**
@@ -77,7 +77,7 @@ class AnuncioController extends Controller
 
         $anuncio = Anuncio::find($id);
 
-        return view('anuncio.anuncio_edit', compact('anuncio'));
+        return view('anuncio.anuncio_edit', compact('anuncio', 'categorias'));
 
     }
 
@@ -95,8 +95,8 @@ class AnuncioController extends Controller
             'conteudo' => 'required|min:5',
 
         ]);
-
-        $anuncio = new Anuncio();
+        
+        $anuncio = Anuncio::find($id);
         $anuncio->titulo = $request->titulo;
         $anuncio->user_id = Auth::id();
         $anuncio->categoria_id = $request->categoria_id;

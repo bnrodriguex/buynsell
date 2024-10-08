@@ -1,42 +1,139 @@
 @extends('adminlte::page')
 
+<!-- -------- ABERTURA DO EDITOR RICO ----------- -->
+
+<link rel="stylesheet" href="{{url('/richtexteditor/rte_theme_default.css')}}" />
+<script type="text/javascript" src="{{url('/richtexteditor/rte.js')}}"></script>
+<script type="text/javascript" src="{{url('/richtexteditor/plugins/all_plugins.js') }}"></script>
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card"> 
-                <div class="card-header"> {{ __('DASHBOARD')}}</div>
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+                <form method="POST" action="{{ URL('/anuncio/' . $anuncio->id ) }}">
+                    @method('PUT')
+                    @csrf
+
+                    <label for='categorias'>Escolha uma categoria:</label><br>
+
+                            <select name="categoria_id" class="form-control" id="categoria_id">
+                                @foreach ($categorias as $value)
+
+                                    @if($value->id == $anuncio->categoria_id)
+                                        <option selected="selected" value="{{ $value->id }}"> {{ $value->nome }}</option>
+                                    @else
+                                        <option value="{{ $value->id }}"> {{ $value->nome }}</option>
+                                    @endif
+
+                                    <option value="{{ $value->id }}"> {{ $value->nome }}</option>
+                                @endforeach
+                            </select>
 
 
-                    <!-- AVISO DE ERRO CASO NAO PASSE NA VALIDAÇÃO
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Titulo</label>
+                        <input type="text" name="titulo" value="{{ $anuncio->titulo }}" class="form-control" placeholder="Digite o titulo da Postagem">
 
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <il>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif -->
-
-                    <!-- INICIO DO FORM -->
-
-
-
-                    <form method="POST" action="{{ URL('/anuncio/' . $anuncio->id ) }}">
-                        
-                        @csrf
-                        @method('PUT')
-
-                        <label for="exampleInputEmail">Nome</label><br>
-                        <input type="text" class="form-control" value="{{ $anuncio->titulo }}" id="titulo" name="titulo" placholder="Digite o titulo do anuncio"><br>
-                        
+                        <label for="exampleInputEmail1">Conteúdo</label>
+                        <textarea type="long-text" id="inp_editor1" name="conteudo" class="form-control" placeholder="Digite o conteúdo da Postagem">{{ $anuncio->conteudo }}</textarea>   
+                    </div>
                         <input type="submit" value="ENVIAR">
-                    </form>
+                </form>
 
-            </div>   
+                   
+                <!-- -------- FECHAMENTO DO EDITOR RICO------- -->
+                     
+                <script>
+                        var editor1 = new RichTextEditor("#inp_editor1");
+                    </script>
+
+            </div>
         </div>
     </div>
-</div>  
+</div>
+@endsection
+
+       
+
+
+
+@extends('adminlte::page')
+
+<!-- -------- ABERTURA DO EDITOR RICO ----------- -->
+
+<link rel="stylesheet" href="{{url('/richtexteditor/rte_theme_default.css')}}" />
+<script type="text/javascript" src="{{url('/richtexteditor/rte.js')}}"></script>
+<script type="text/javascript" src="{{url('/richtexteditor/plugins/all_plugins.js') }}"></script>
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+                <form method = 'GET' action= "{{ URL( '/anuncio/' . $anuncio->id )}}" >
+                    @method('PUT')
+                    @csrf
+
+                    <label for='categorias'>Escolha uma categoria:</label><br>
+
+                            <select name="categoria_id" class="form-control" id="categoria_id">
+                                @foreach ($categorias as $value)
+
+                                    @if($value->id == $anuncio->categoria_id)
+                                        <option selected="selected" value="{{ $value->id }}"> {{ $value->nome }}</option>
+                                    @else
+                                        <option value="{{ $value->id }}"> {{ $value->nome }}</option>
+                                    @endif
+
+                                    <option value="{{ $value->id }}"> {{ $value->nome }}</option>
+                                @endforeach
+                            </select>
+
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Titulo</label>
+                        <input type="text" name="titulo" value="{{ $anuncio->titulo }}" class="form-control" placeholder="Digite o titulo da Postagem">
+
+                        <label for="exampleInputEmail1">Conteúdo</label>
+                        <textarea type="long-text" id="inp_editor1" name="conteudo" class="form-control" placeholder="Digite o conteúdo da Postagem">{{ $anuncio->conteudo }}</textarea>   
+                    </div>
+                        <input type="submit" value="ENVIAR">
+                </form>
+
+                   
+                <!-- -------- FECHAMENTO DO EDITOR RICO------- -->
+                     
+                <script>
+                        var editor1 = new RichTextEditor("#inp_editor1");
+                    </script>
+
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
