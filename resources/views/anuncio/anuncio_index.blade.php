@@ -27,6 +27,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Título</th>
+                                <th>Categoria</th>
                                 <th class='text-center'>Ações</th>
                             </tr>
 

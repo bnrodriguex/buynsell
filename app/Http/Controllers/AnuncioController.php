@@ -39,18 +39,28 @@ class AnuncioController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());,
+        //  dd($request->all());
 
+        // 1- PEGAR O CONTEUDO DO ARQUIVO
+        $content = file_get_contents($request->file('imagem'));
+
+        // 2- VALIDAR O TIPO DO ARQUIVO
+        
+        
         $validated = $request->validate([
             'categoria_id' => 'required',
             'titulo' => 'required|min:5',
+            // 2- VALIDAR O TIPO DO ARQUIVO
+            'imagem' => 'mimes:jpg,bmp,png',
             'conteudo' => 'required|min:5',
-
+            
         ]);
-
+        
         $anuncio = new Anuncio();
         $anuncio->categoria_id = $request->categoria_id;
         $anuncio->titulo = $request->titulo;
+        // 3- CONVERTER PARA BASE64
+        $anuncio->imagem = base64_encode($content);
         $anuncio->user_id = Auth::id();
         $anuncio->conteudo = $request->conteudo;
         $anuncio->save();
