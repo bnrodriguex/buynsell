@@ -20,7 +20,7 @@ class Anuncio extends Model
 
     public function categoria(): HasOne
     {
-        return $this->hasOne(Anuncio::class, 'id', 'anuncio_id');
+        return $this->hasOne(Categoria::class, 'id', 'categoria_id');
     }
 
 }

@@ -28,10 +28,11 @@ class AnuncioController extends Controller
      */
     public function create()
     {
-        // dd('OLÁ');
+        
         $anuncios = Anuncio::orderBy('titulo', 'ASC')->get();
         $categorias = Categoria::get();
         return view ('anuncio.anuncio_create', compact('categorias', 'anuncios'));  
+    
     }
 
     /**
@@ -44,9 +45,7 @@ class AnuncioController extends Controller
         // 1- PEGAR O CONTEUDO DO ARQUIVO
         $content = file_get_contents($request->file('imagem'));
 
-        // 2- VALIDAR O TIPO DO ARQUIVO
-        
-        
+    
         $validated = $request->validate([
             'categoria_id' => 'required',
             'titulo' => 'required|min:5',
@@ -73,9 +72,10 @@ class AnuncioController extends Controller
      */
     public function show(string $id)
     {
-        // dd('show:'. $id);
+    // dd($request->all());
         $anuncio = Anuncio::find($id);
-        return view('anuncio.anuncio_show', compact('anuncio'));
+        $categoria = Categoria::find($id);
+        return view('anuncio.anuncio_show', compact('anuncio', 'categoria'));
     }
 
     /**
