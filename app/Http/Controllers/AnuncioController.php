@@ -72,10 +72,10 @@ class AnuncioController extends Controller
      */
     public function show(string $id)
     {
-    // dd($request->all());
         $anuncio = Anuncio::find($id);
         $categoria = Categoria::find($id);
         return view('anuncio.anuncio_show', compact('anuncio', 'categoria'));
+        dd($request->all());
     }
 
     /**

@@ -34,14 +34,16 @@
                             <option value="{{ $value->id }}">{{ $value->nome }}</option>
                             @endforeach
                         </select>
+                        
+                        <label>imagem</label>
+                        <input type="file" name="imagem" class="form-control">  
 
-
-                    <div class="form-group">
+                     <div class="form-group">
                         <label for="exampleInputEmail1">Titulo</label>
                         <input type="text" name="titulo" value="{{ $anuncio->titulo }}" class="form-control" placeholder="Digite o novo titulo do Anuncio">
 
                         <label for="exampleInputEmail1">Conteúdo</label>
-                        <textarea id="inp_editor1" name="conteudo" class="form-control" placeholder="Digite o novo conteúdo do Anuncio">{{ $anuncio->conteudo }}</textarea>   
+                        <textarea id="inp_editor1" name="conteudo" class="form-control" placeholder="Digite o novo conteúdo do Anuncio">{{ $anuncio->conteudo }}</textarea>
                     </div>
                         <input type="submit" value="ENVIAR">
                 </form>
