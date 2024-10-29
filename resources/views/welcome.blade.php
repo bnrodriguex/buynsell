@@ -29,11 +29,11 @@
             <div class="category-carousel swiper">
               <div class="swiper-wrapper">
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/cars.svg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="images/carross.svg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/carrologosite.svg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="images/movel.svg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Breads & Sweets</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
