@@ -109,7 +109,7 @@
 <body>
     
 
-    <div class="container">
+    <div class="section">
             @yield('content')
     </div>
     
