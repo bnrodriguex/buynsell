@@ -29,7 +29,7 @@
             <div class="category-carousel swiper">
               <div class="swiper-wrapper">
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/carross.svg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="images/carrosa.svg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
@@ -37,19 +37,19 @@
                   <h4 class="fs-6 mt-3 fw-normal category-title">Breads & Sweets</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-3.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="images/imoveis.svg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Fruits & Veges</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-4.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="images/eletronicoss.svg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Beverages</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-5.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="images/eletro.svg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Meat Products</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
-                  <img src="images/category-thumb-6.jpg" class="rounded-circle" alt="Category Thumbnail">
+                  <img src="images/casadecor.svg" class="rounded-circle" alt="Category Thumbnail">
                   <h4 class="fs-6 mt-3 fw-normal category-title">Breads</h4>
                 </a>
                 <a href="category.html" class="nav-link swiper-slide text-center">
@@ -116,7 +116,7 @@
             <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5">
                   
                 <div class="col">
-                  <div class="product-item">
+                  <div class="product-item"style="align-items: center;">
                     <figure>
                       <a href="index.html" title="Product Title">
                         <img src="images/product-thumb-1.png" alt="Product Thumbnail" class="tab-image">
@@ -139,19 +139,12 @@
                         <span class="text-dark fw-semibold">$18.00</span>
                         <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
                       </div>
-                      <div class="button-area p-3 pt-0">
-                        <div class="row g-1 mt-2">
-                          <div class="col-3"><input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                          <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-8 btn-cart"><img src='images/carrinhoicon.svg' width="18" height="18"> Add to Cart</a></div>
-                          <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18" height="18"><use xlink:href="#heart"></use></svg></a></div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="col">
-                  <div class="product-item">
+                  <div class="product-item"style="align-items: center;">
                     <figure>
                       <a href="index.html" title="Product Title">
                         <img src="images/product-thumb-2.png" alt="Product Thumbnail" class="tab-image">
@@ -174,19 +167,13 @@
                         <span class="text-dark fw-semibold">$50.00</span>
                         <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
                       </div>
-                      <div class="button-area p-3 pt-0">
-                        <div class="row g-1 mt-2">
-                          <div class="col-3"><input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                          <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><img src='images/carrinhoicon.svg' width="18" height="18">Add to Cart</a></div>
-                          <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18" height="18"><use xlink:href="#heart"></use></svg></a></div>
-                        </div>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
 
                 <div class="col">
-                  <div class="product-item">
+                  <div class="product-item" style="align-items:center;">
                     <figure>
                       <a href="index.html" title="Product Title">
                         <img src="images/product-thumb-3.png" alt="Product Thumbnail" class="tab-image">
@@ -209,22 +196,15 @@
                         <span class="text-dark fw-semibold">$12.00</span>
                         <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
                       </div>
-                      <div class="button-area p-3 pt-0">
-                        <div class="row g-1 mt-2">
-                          <div class="col-3"><input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                          <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><img src='images/carrinhoicon.svg' width="18" height="18"> Add to Cart</a></div>
-                          <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18" height="18"><use xlink:href="#heart"></use></svg></a></div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="col">
-                  <div class="product-item">
+                  <div class="product-item"style="align-items: center;">
                     <figure>
                       <a href="index.html" title="Product Title">
-                        <img src="images/product-thumb-4.png" alt="Product Thumbnail" class="tab-image">
+                        <img src="images/product-thumb-3.png" alt="Product Thumbnail" class="tab-image">
                       </a>
                     </figure>
                     <div class="d-flex flex-column text-center">
@@ -244,19 +224,12 @@
                         <span class="text-dark fw-semibold">$18.00</span>
                         <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
                       </div>
-                      <div class="button-area p-3 pt-0">
-                        <div class="row g-1 mt-2">
-                          <div class="col-3"><input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                          <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><img src='images/carrinhoicon.svg' width="18" height="18"> Add to Cart</a></div>
-                          <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18" height="18"><use xlink:href="#heart"></use></svg></a></div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
                 
-                <div class="col">
-                  <div class="product-item">
+                <div class="col p-4">
+                  <div class="product-item" style="align-items: center;">
                     <figure>
                       <a href="index.html" title="Product Title">
                         <img src="images/product-thumb-5.png" alt="Product Thumbnail" class="tab-image">
@@ -279,19 +252,12 @@
                         <span class="text-dark fw-semibold">$18.00</span>
                         <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
                       </div>
-                      <div class="button-area p-3 pt-0">
-                        <div class="row g-1 mt-2">
-                          <div class="col-3"><input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                          <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><img src='images/carrinhoicon.svg' width="18" height="18"> Add to Cart</a></div>
-                          <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18" height="18"><use xlink:href="#heart"></use></svg></a></div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
                 
                 <div class="col">
-                  <div class="product-item">
+                  <div class="product-item"style="align-items: center;">
                     <figure>
                       <a href="index.html" title="Product Title">
                         <img src="images/product-thumb-6.png" alt="Product Thumbnail" class="tab-image">
@@ -314,19 +280,12 @@
                         <span class="text-dark fw-semibold">$18.00</span>
                         <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
                       </div>
-                      <div class="button-area p-3 pt-0">
-                        <div class="row g-1 mt-2">
-                          <div class="col-3"><input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                          <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><img src='images/carrinhoicon.svg' width="18" height="18"> Add to Cart</a></div>
-                          <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18" height="18"><use xlink:href="#heart"></use></svg></a></div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
                 
                 <div class="col">
-                  <div class="product-item">
+                  <div class="product-item"style="align-items: center;">
                     <figure>
                       <a href="index.html" title="Product Title">
                         <img src="images/product-thumb-7.png" alt="Product Thumbnail" class="tab-image">
@@ -349,19 +308,12 @@
                         <span class="text-dark fw-semibold">$18.00</span>
                         <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
                       </div>
-                      <div class="button-area p-3 pt-0">
-                        <div class="row g-1 mt-2">
-                          <div class="col-3"><input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                          <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><img src='images/carrinhoicon.svg' width="18" height="18"> Add to Cart</a></div>
-                          <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18" height="18"><use xlink:href="#heart"></use></svg></a></div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
                 
                 <div class="col">
-                  <div class="product-item">
+                  <div class="product-item"style="align-items: center;">
                     <figure>
                       <a href="index.html" title="Product Title">
                         <img src="images/product-thumb-8.png" alt="Product Thumbnail" class="tab-image">
@@ -384,19 +336,12 @@
                         <span class="text-dark fw-semibold">$18.00</span>
                         <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
                       </div>
-                      <div class="button-area p-3 pt-0">
-                        <div class="row g-1 mt-2">
-                          <div class="col-3"><input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                          <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><img src='images/carrinhoicon.svg' width="18" height="18"> Add to Cart</a></div>
-                          <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18" height="18"><use xlink:href="#heart"></use></svg></a></div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
                 
                 <div class="col">
-                  <div class="product-item">
+                  <div class="product-item" style="align-items: center;">
                     <figure>
                       <a href="index.html" title="Product Title">
                         <img src="images/product-thumb-9.png" alt="Product Thumbnail" class="tab-image">
@@ -419,19 +364,12 @@
                         <span class="text-dark fw-semibold">$18.00</span>
                         <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
                       </div>
-                      <div class="button-area p-3 pt-0">
-                        <div class="row g-1 mt-2">
-                          <div class="col-3"><input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                          <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><img src='images/carrinhoicon.svg' width="18" height="18"> Add to Cart</a></div>
-                          <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18" height="18"><use xlink:href="#heart"></use></svg></a></div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="col">
-                  <div class="product-item">
+                  <div class="product-item"style="align-items: center;">
                     <figure>
                       <a href="index.html" title="Product Title">
                         <img src="images/product-thumb-10.png" alt="Product Thumbnail" class="tab-image">
@@ -454,13 +392,6 @@
                         <span class="text-dark fw-semibold">$18.00</span>
                         <span class="badge border border-dark-subtle rounded-0 fw-normal px-1 fs-7 lh-1 text-body-tertiary">10% OFF</span>
                       </div>
-                      <div class="button-area p-3 pt-0">
-                        <div class="row g-1 mt-2">
-                          <div class="col-3"><input type="number" name="quantity" class="form-control border-dark-subtle input-number quantity" value="1"></div>
-                          <div class="col-7"><a href="#" class="btn btn-primary rounded-1 p-2 fs-7 btn-cart"><img src='images/carrinhoicon.svg' width="18" height="18"> Add to Cart</a></div>
-                          <div class="col-2"><a href="#" class="btn btn-outline-dark rounded-1 p-2 fs-6"><svg width="18" height="18"><use xlink:href="#heart"></use></svg></a></div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -476,7 +407,48 @@
       </section>
     </div>
 
-    <!------------------GRADE DE ANUNCIOS---------------------------->
+                    <!--- GRADE DE ANUNCIOS --->
+
+
+
+    <!------------------ BANNER DE INSCRIÇÃO ------------------------>
+      <div class="container">
+            <div class="container-xl">
+
+              <div class="bg-secondary text-light py-5 my-5" style="background: url('images/fundosa.svg') no-repeat; background-size:cover ;">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-md-5 p-3">
+                      <div class="section-header">
+                        <h2 style="color:yellow;" class="section-title display-8">Receba os anúncios em primeira mão se inscrevendo no site! </h2>
+                      </div>
+                      <strong> <p style="font-size: large;">Apenas Registre-se e torne-se o novo Membro da BuyN'Sell</p></strong>
+                    </div>
+                    <div class="col-md-5 p-3">
+                      <form>
+                        <div class="mb-3">
+                          <label for="name" class="form-label d-none">Nome</label>
+                          <input type="text"
+                            class="form-control form-control-md rounded-0" name="nome" id="nome" placeholder="Nome">
+                        </div>
+                        <div class="mb-3">
+                          <label for="email" class="form-label d-none">Email</label>
+                          <input type="email" class="form-control form-control-md rounded-0" name="email" id="email" placeholder="Email">
+                        </div>
+                        <div class="d-grid gap-2">
+                          <button type="submit" class="btn btn-warning btn-md rounded-0">Enviar</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+      </div>
+
+                    <!--- BANNER DE INSCRIÇÃO --->
+
 
 
     <!-- ---------------GRADE IMAGENS AMOSTRATIVAS---------------------- -->
