@@ -13,29 +13,29 @@
     
     <link rel="stylesheet" href="{{url('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css') }}">
     <link href="{{url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{url('css/vendor.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{url('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{url('style.css') }}">
     
     <link rel="preconnect" href="{{url('https://fonts.googleapis.com') }}">
     <link rel="preconnect" href="{{url('https://fonts.gstatic.com') }}" crossorigin>
     <link href="{{url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap') }}" rel="stylesheet">
+
     
 </head>
 <header>
   <div class="container-fluid">
     <div class="row py-3 border-bottom">
       
-      <div class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
-        <div class="d-flex align-items-center my-3 my-sm-0">
-          <a href="index.html">
-            <img src="images/logo.svg" alt="logo" class="img-fluid">
-          </a>
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar">
-          <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#menu"></use></svg>
-        </button>
-      </div>
+    <div class="col-sm-4 col-lg-2 text-center text-sm-start d-flex gap-3 justify-content-center justify-content-md-start">
+            <div class="d-flex align-items-center my-3 my-sm-0">
+              <a href="index.html">
+                <img src="images/logo.svg" alt="logo" class="img-fluid">
+              </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <svg width="24" height="24" viewBox="0 0 24 24"><use link:href="carrinhoicon"></use></svg>
+            </button>
+          </div>
       
       <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-4">
         <div class="search-bar row bg-light p-2 rounded-4">
@@ -53,7 +53,7 @@
             </form>
           </div>
           <div class="col-1">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"></path></svg>
           </div>
         </div>
       </div>

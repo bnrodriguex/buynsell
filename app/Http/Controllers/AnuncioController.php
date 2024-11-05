@@ -50,7 +50,7 @@ class AnuncioController extends Controller
             'categoria_id' => 'required',
             'titulo' => 'required|min:5',
             // 2- VALIDAR O TIPO DO ARQUIVO
-            'imagem' => 'mimes:jpg,bmp,png',
+            'imagem' => 'mimes:jpg,bmp,png,jpeg',
             'conteudo' => 'required|min:5',
             
         ]);
@@ -75,7 +75,6 @@ class AnuncioController extends Controller
         $anuncio = Anuncio::find($id);
         $categoria = Categoria::find($id);
         return view('anuncio.anuncio_show', compact('anuncio', 'categoria'));
-        dd($request->all());
     }
 
     /**
@@ -96,11 +95,12 @@ class AnuncioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+        $content = file_get_contents($request->file('imagem'));
         
         
          $validated = $request->validate([
             'categoria_id' => 'required',
+            'imagem' => 'mimes:jpg,bmp,png,jpeg',
             'titulo' => 'required|min:5',
             'conteudo' => 'required|min:5',
 
@@ -110,6 +110,7 @@ class AnuncioController extends Controller
         $anuncio->titulo = $request->titulo;
         $anuncio->user_id = Auth::id();
         $anuncio->categoria_id = $request->categoria_id;
+        $anuncio->imagem = base64_encode($content);
         $anuncio->conteudo = $request->conteudo;
         $anuncio->save();
 

@@ -2,6 +2,11 @@
 
 @section('content')
         
+<div class="preloader-wrapper">
+      <div class="preloader">
+      </div>
+</div>
+
         <!-- ----------------- CARROUSEL CATEGORIAS --------------- -->
 
 <section class="py-5 overflow-hidden">

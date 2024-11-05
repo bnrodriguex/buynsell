@@ -23,7 +23,7 @@
                 </div>
             @endif
 
-                <form method="POST" action="{{ URL('/anuncio/' . $anuncio->id ) }}">
+                <form method="POST" action="{{ URL('/anuncio/' . $anuncio->id ) }}" enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
 

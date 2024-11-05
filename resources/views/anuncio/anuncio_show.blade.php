@@ -12,7 +12,7 @@
                     <p><strong> Conteúdo: </strong> {{ $anuncio->conteudo }}</p>
                     <p><strong> Autor: </strong> {{ $anuncio->autor->name}}</p>
                     <p><strong> Criação: </strong> {{ $anuncio->created_at }}</p>
-                    <p><strong> Imagem: </strong> <img src="data:image/png;base64, {{ $anuncio->Imagem }}" alt="imagem" /> </p>
+                    <p><strong> Imagem: </strong> <img src="data:image/png;base64, {{ $anuncio->imagem }}" alt="imagem" /> </p>
 
             </div>   
         </div>
