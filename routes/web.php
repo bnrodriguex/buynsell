@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\AnuncioController;
-
+use App\Http\Controllers\FeedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +17,11 @@ use App\Http\Controllers\AnuncioController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [FeedController::class, 'welcome'])->name('welcome');
 
 Auth::routes();
 
