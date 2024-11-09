@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class FeedController extends Controller
 {
     public function welcome(){
-        $anuncios = Anuncio::OrderBy('id', "DESC")->get();
+        $anuncios = Anuncio::OrderBy('id')->get();
         return view('welcome', compact('anuncios'));
     }
 }
