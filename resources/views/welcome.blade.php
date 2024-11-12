@@ -122,7 +122,7 @@
             <div class="col">
               <div class="product-item justify-content-center">
                 <figure>
-                  <a href="index.html" title="Product Title">
+                  <a href="{{ url('') }}" title="Product Title">
                     <img style="items-align:center" src="data:image/png;base64,{{ $value->imagem }}" alt="Product Thumbnail" class="tab-image" height="180">
                   </a>
                 </figure>

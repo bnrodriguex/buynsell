@@ -66,7 +66,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle pe-3" role="button" id="pages" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
             <ul class="dropdown-menu border-0 p-3 rounded-0 shadow" aria-labelledby="pages">
-              <li><a href="index.html" class="dropdown-item">About Us </a></li>
+              <li><a href="{{ url('/feed/categoria') }}" class="dropdown-item">Categorias </a></li>
               <li><a href="index.html" class="dropdown-item">Shop </a></li>
               <li><a href="index.html" class="dropdown-item">Single Product </a></li>
               <li><a href="index.html" class="dropdown-item">Cart </a></li>

@@ -43,8 +43,9 @@ class AnuncioController extends Controller
         //  dd($request->all());
 
         // 1- PEGAR O CONTEUDO DO ARQUIVO
-        $content = file_get_contents($request->file('imagem'));
-
+        if($request->file('imagem')){
+            $content = file_get_contents($request->file('imagem'));
+        }
     
         $validated = $request->validate([
             'categoria_id' => 'required',
@@ -59,7 +60,9 @@ class AnuncioController extends Controller
         $anuncio->categoria_id = $request->categoria_id;
         $anuncio->titulo = $request->titulo;
         // 3- CONVERTER PARA BASE64
-        $anuncio->imagem = base64_encode($content);
+        if($request->file('imagem')){
+            $anuncio->imagem = base64_encode($content);
+        }
         $anuncio->user_id = Auth::id();
         $anuncio->conteudo = $request->conteudo;
         $anuncio->save();
@@ -95,7 +98,9 @@ class AnuncioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $content = file_get_contents($request->file('imagem'));
+        if($request->file('imagem')){
+            $content = file_get_contents($request->file('imagem'));
+        }
         
         
          $validated = $request->validate([
@@ -110,7 +115,9 @@ class AnuncioController extends Controller
         $anuncio->titulo = $request->titulo;
         $anuncio->user_id = Auth::id();
         $anuncio->categoria_id = $request->categoria_id;
-        $anuncio->imagem = base64_encode($content);
+        if($request->file('imagem')){
+            $anuncio->imagem = base64_encode($content);
+        }   
         $anuncio->conteudo = $request->conteudo;
         $anuncio->save();
 

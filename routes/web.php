@@ -23,7 +23,13 @@ use App\Http\Controllers\FeedController;
 
 Route::get('/', [FeedController::class, 'welcome'])->name('welcome');
 
+Route::get('/feed/categoria', [FeedController::class, 'categoria'])->name('feed.categoria');
+
+Route::get('feed/categoria/{id}',  [FeedController::class, 'categoriaById'])->name('feed.categoriaById');
+
 Auth::routes();
+
+// PAREI DE VER NO VIDEO DO FILTRO CATEGORIA COM 42 NO TEMPO
 
 // ---- O AUTH SENDO USADO MEDIANTE AO DOCS DO LARAVEL -----
 Route::middleware(['auth'])->group(function () {
@@ -52,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/categoria/{id}',[CategoriaController::class, 'destroy'])->name('categoria.destroy');   
 
 
-    // --------------------Anuncio---------------------------
+    // --------------------ANUNCIOS---------------------------
     Route::get('/anuncio', [AnuncioController::class, 'index'])->name('anuncio.index');
 
     Route::get('/anuncio/create', [AnuncioController::class, 'create'])->name('anuncio.create');
@@ -68,7 +74,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::delete('/anuncio/{id}',[AnuncioController::class, 'destroy'])->name('anuncio.destroy');
 
-    //--------------------Anuncio---------------------------\\
+    //--------------------ANUNCIOS---------------------------\\
+
+
+
+
 
 
 });
