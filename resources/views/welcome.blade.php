@@ -122,9 +122,9 @@
             <div class="col">
               <div class="product-item justify-content-center">
                 <figure>
-                  <a href="{{ url('') }}" title="Product Title">
+                  <a href="{{ url('/feed/categoria/' . $value->id) }}" title="Product Title">
                     <img style="items-align:center" src="data:image/png;base64,{{ $value->imagem }}" alt="Product Thumbnail" class="tab-image" height="180">
-                  </a>
+                  </a>  
                 </figure>
                 <div class="d-flex flex-column text-center">
                   <h3 class="fs-6 fw-large justify-content-center" style="text-align: left;">{{ $value->titulo }}</h3>

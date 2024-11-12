@@ -20,8 +20,8 @@ class FeedController extends Controller
     }
 
     public function categoriaById($id){
-        $categorias = Categoria::where('categoria_id' , $id)->orderBy('id', 'DESC')->get();
-        return view('feed.categoriaById', compact('categorias'));
+        $anuncios = Anuncio::where('categoria_id' , $id)->orderBy('id', 'DESC')->get();
+        return view('feed.categoriaById', compact('anuncios'));
     }
 }
 
