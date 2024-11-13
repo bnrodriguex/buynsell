@@ -16,7 +16,8 @@ class AnuncioController extends Controller
      */
     public function index()
     {
-        $anuncios = Anuncio::orderBy('id', 'ASC')->get();
+        $user_id = Auth::id();
+        $anuncios = Anuncio::where('user_id', $user_id)->orderBy('id', 'ASC')->get();
         
        //dd($anuncios);
 
@@ -85,6 +86,18 @@ class AnuncioController extends Controller
      */
     public function edit(string $id)
     {
+        // VERIFICAR SE O USER PODE MODIFICAR ESSA POSTAGEM
+        $user_id = Auth::id();
+        $VerUser = Anuncio::where('id' , $id)->where('user_id', $user_id)->exists();
+        if(!$VerUser){
+            return redirect()->route('anuncio.index')->with('mensagem', 'Você não tem permissão para alterar a postagem!!!');
+        }
+        
+
+
+
+        // QUANTO > É A SEGURANÇA. > É O CUIDADO
+
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
 
         $anuncio = Anuncio::find($id);
@@ -98,6 +111,13 @@ class AnuncioController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // VERIFICAR SE O USER PODE MODIFICAR ESSA POSTAGEM
+        $user_id = Auth::id();
+        $VerUser = Anuncio::where('id' , $id)->where('user_id', $user_id)->exists();
+        if(!$VerUser){
+            return redirect()->route('anuncio.index')->with('mensagem', 'Você não tem permissão para alterar a postagem!!!');
+        }
+
         if($request->file('imagem')){
             $content = file_get_contents($request->file('imagem'));
         }
