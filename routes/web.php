@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\AnuncioController;
 use App\Http\Controllers\FeedController;
+use App\Http\Controllers\PerfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-    Route::middleware(['can::is_admin'])->group(function () {
+    Route::middleware(['can::admin'])->group(function () {
 
 
         // --------- CATEGORIAS --------------
@@ -56,9 +57,10 @@ Route::middleware(['auth'])->group(function () {
         
         Route::put('/categoria/{id}', [CategoriaController::class, 'update'])->name('categoria.update');
 
-        Route::delete('/categoria/{id}',[CategoriaController::class, 'destroy'])->name('categoria.destroy');   
-
+        Route::delete('/categoria/{id}',[CategoriaController::class, 'destroy'])->name('categoria.destroy');
+    
     });
+
 
         // --------------------ANUNCIOS---------------------------
         Route::get('/anuncio', [AnuncioController::class, 'index'])->name('anuncio.index');
@@ -80,6 +82,16 @@ Route::middleware(['auth'])->group(function () {
 
 
 
+        //--------------------PERFIL---------------------------\\
+        
+        Route::get('/perfil' , [PerfilController::class, 'index'])->name('perfil.index');
 
+        Route::get('/perfil/create', [PerfilController::class, 'create'])->name('perfil.create');
+
+        Route::get('perfil/{perfil}/edit', [PerfilController::class, 'edit'])->name('perfil.edit');
+
+
+
+        //--------------------PERFIL---------------------------\\
 
 });

@@ -324,20 +324,20 @@ return [
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url' => 'admin/settings',
+            'text' => 'Perfil',
+            'url' => 'perfil',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Categoria',
+            'text' => 'Categorias',
             'url' => 'categoria',
             'icon' => 'fas fa-fw fa-user',
-            'can' => 'is-admin',
+            'can' => 'admin',
         ],
         [
-            'text' => 'Anúncio',
+            'text' => 'Anúncios',
             'url' => 'anuncio',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'far fa-fw fa-file',
         ],
         [
             'text' => 'change_password',
