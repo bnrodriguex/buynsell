@@ -1,6 +1,8 @@
 <?php
 
+
 return [
+
 
     /*
     |--------------------------------------------------------------------------
@@ -14,7 +16,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Buy N´ Sell',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,12 +65,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo' => '<b class="custom-logo">Buy N´Sell</b>',
+    'logo_img' => 'images/logobuynsell.svg',
+    'logo_img_class' => 'brand-image img-circle elevation-5',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
+    'logo_img_alt' => 'BuynSell Logo',
 
     /*
     |--------------------------------------------------------------------------
@@ -84,13 +86,13 @@ return [
     */
 
     'auth_logo' => [
-        'enabled' => false,
+        'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'Auth Logo',
+            'path' => 'images/logobuynsell.svg',
+            'alt' => 'BuynSell Logo',
             'class' => '',
-            'width' => 50,
-            'height' => 50,
+            'width' => 90,
+            'height' => 90,
         ],
     ],
 
@@ -113,8 +115,8 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
+            'path' => 'images/logobuynsell.svg',
+            'alt' => 'BuynSell Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
             'height' => 60,
@@ -236,7 +238,7 @@ return [
     |
     */
 
-    'right_sidebar' => false,
+    'right_sidebar' => true,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
@@ -553,4 +555,13 @@ return [
     */
 
     'livewire' => false,
+    
+    
+    // IMPLEMENTAÇÃO DO CSS
+
+    'css' => [
+        asset('css/custom_Login.css'),  // Adicionando o CSS personalizado
+    ],
 ];
+
+

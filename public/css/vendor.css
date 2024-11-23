@@ -250,3 +250,8 @@ body.chocolat-open > .chocolat-image-wrapper {
 .chocolat-zoomable.chocolat-zooming-out .chocolat-img {
     transition: margin .2s ease;
 }
+.custom-logo {
+    color: yellow;      /* Cor do texto */
+    font-weight: bold; /* Negrito */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4); /* Sombra do texto */
+}
