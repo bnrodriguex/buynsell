@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('anuncios', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('categoria_id');
+            $table->bigInteger('user_id');
+            $table->longText('imagem')->nullable();
             $table->string('titulo');
             $table->text('conteudo');
-            $table->bigInteger('user_id');
             $table->timestamps();
         });
     }

@@ -28,7 +28,20 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected function registered(Request $request, $user)
+    {
+        if ($user->perfil === 'admin') {
+            return redirect('/admin/dashboard');
+        }
+
+        return redirect('/home');
+    }
+
+    public function showRegistrationForm()
+    {
+        // Altere o nome da view se necessário
+        return view('auth.register_user');  // Chama a sua view personalizada
+    }
 
     /**
      * Create a new controller instance.
@@ -55,6 +68,7 @@ class RegisterController extends Controller
         ]);
     }
 
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -63,10 +77,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // Definir o perfil com base no domínio do e-mail
+        $perfil = strpos($data['email'], '@suporteempresaminha.com.br') !== false ? 'admin' : 'padrao';
+
+        // Criar o usuário com o perfil determinado automaticamente
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'perfil' => $perfil,  // O perfil será 'admin' ou 'padrao', dependendo do e-mail
         ]);
     }
 }

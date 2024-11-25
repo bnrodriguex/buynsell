@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Anuncio;
+use App\Models\Categoria;
+use Illuminate\Support\Facades\Auth;
 
-//TROCAR TUDO P/ ANUNCIO -> 17:52 EM CRUD POSTAGEM INDEX CREATE SHOW.
+
 
 class AnuncioController extends Controller
 {
@@ -14,7 +16,8 @@ class AnuncioController extends Controller
      */
     public function index()
     {
-        $anuncios = Anuncio::orderBy('id', 'ASC')->get();
+        $user_id = Auth::id();
+        $anuncios = Anuncio::where('user_id', $user_id)->orderBy('id', 'ASC')->get();
         
        //dd($anuncios);
 
@@ -26,8 +29,11 @@ class AnuncioController extends Controller
      */
     public function create()
     {
-        // dd('OLÁ');
-        return view ('anuncio.anuncio_create');
+        
+        $anuncios = Anuncio::orderBy('titulo', 'ASC')->get();
+        $categorias = Categoria::get();
+        return view ('anuncio.anuncio_create', compact('categorias', 'anuncios'));  
+    
     }
 
     /**
@@ -35,16 +41,32 @@ class AnuncioController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());,
+        //  dd($request->all());
 
+        // 1- PEGAR O CONTEUDO DO ARQUIVO
+        if($request->file('imagem')){
+            $content = file_get_contents($request->file('imagem'));
+        }
+    
         $validated = $request->validate([
+            'categoria_id' => 'required',
             'titulo' => 'required|min:5',
-
+            // 2- VALIDAR O TIPO DO ARQUIVO
+            'imagem' => 'mimes:jpg,bmp,png,jpeg',
+            'conteudo' => 'required|min:5',
+            
         ]);
-
+        
         $anuncio = new Anuncio();
+        $anuncio->categoria_id = $request->categoria_id;
         $anuncio->titulo = $request->titulo;
-        $anuncio-> save();
+        // 3- CONVERTER PARA BASE64
+        if($request->file('imagem')){
+            $anuncio->imagem = base64_encode($content);
+        }
+        $anuncio->user_id = Auth::id();
+        $anuncio->conteudo = $request->conteudo;
+        $anuncio->save();
 
         return redirect()->route('anuncio.index')->with('mensagem', 'Anuncio cadastrada com sucesso!');
     }
@@ -54,9 +76,9 @@ class AnuncioController extends Controller
      */
     public function show(string $id)
     {
-        // dd('show:'. $id);
         $anuncio = Anuncio::find($id);
-        return view('anuncio.anuncio_show', compact('anuncio'));
+        $categoria = Categoria::find($id);
+        return view('anuncio.anuncio_show', compact('anuncio', 'categoria'));
     }
 
     /**
@@ -64,8 +86,23 @@ class AnuncioController extends Controller
      */
     public function edit(string $id)
     {
+        // VERIFICAR SE O USER PODE MODIFICAR ESSA POSTAGEM
+        $user_id = Auth::id();
+        $VerUser = Anuncio::where('id' , $id)->where('user_id', $user_id)->exists();
+        if(!$VerUser){
+            return redirect()->route('anuncio.index')->with('mensagem', 'Você não tem permissão para alterar a postagem!!!');
+        }
+        
+
+
+
+        // QUANTO > É A SEGURANÇA. > É O CUIDADO
+
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+
         $anuncio = Anuncio::find($id);
-        return view('anuncio.anuncio_edit', compact('anuncio'));
+
+        return view('anuncio.anuncio_edit', compact('anuncio', 'categorias'));
 
     }
 
@@ -74,16 +111,34 @@ class AnuncioController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // VERIFICAR SE O USER PODE MODIFICAR ESSA POSTAGEM
+        $user_id = Auth::id();
+        $VerUser = Anuncio::where('id' , $id)->where('user_id', $user_id)->exists();
+        if(!$VerUser){
+            return redirect()->route('anuncio.index')->with('mensagem', 'Você não tem permissão para alterar a postagem!!!');
+        }
+
+        if($request->file('imagem')){
+            $content = file_get_contents($request->file('imagem'));
+        }
         
         
-        
-        $validated = $request->validate([
+         $validated = $request->validate([
+            'categoria_id' => 'required',
+            'imagem' => 'mimes:jpg,bmp,png,jpeg',
             'titulo' => 'required|min:5',
+            'conteudo' => 'required|min:5',
 
         ]);
-
+        
         $anuncio = Anuncio::find($id);
-        $anuncio->titulo =  $request->titulo;
+        $anuncio->titulo = $request->titulo;
+        $anuncio->user_id = Auth::id();
+        $anuncio->categoria_id = $request->categoria_id;
+        if($request->file('imagem')){
+            $anuncio->imagem = base64_encode($content);
+        }   
+        $anuncio->conteudo = $request->conteudo;
         $anuncio->save();
 
         return redirect()->route('anuncio.index')->with('mensagem', 'Anuncio alterada com sucesso!');

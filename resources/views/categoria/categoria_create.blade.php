@@ -30,19 +30,20 @@
 
 
 
-                    <form method="POST" action=" {{ URL('/categoria') }}">
+                    <form method="POST" action="{{ URL('/categoria') }}">
                         
                         @csrf
 
                         <label for="exampleInputEmail">Nome</label><br>
                         <input type="text" class="form-control" id="nome" name="nome" placholder="Digite o nome da categoria"><br>
+
                         
                         <input type="submit" value="ENVIAR">
                     </form>
 
                     <!--  FIM DO FORM  -->
 
-                    <!-- QUANDO FOR ADD O ANUNCIO_SHOW_BLADE.PHP LEMBRE DE COLOCAR <p><strong> Conteúdo</strong> </p>
+                    <!-- QUANDO FOR ADD O ANUNCIO_SHOW_BLADE.PHP LEMBRE DE COLOCAR <p><strong> Conteúdo</strong> { $postagem->conteudo } </p>
                         E NO ID DENTRO DO FORM (AONDE ESTÁ O NOSSO QUERIDO CONTEUDO) TROQUE PARA : "inp_editor1"  IGUAL O SCRIPT QUE FECHA O EDITOR RICO!
                     -->
 

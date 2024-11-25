@@ -13,8 +13,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    
+                        @can('admin')
+                            <p>Parabéns Você é o ADM</p>
+                        
+                        @else
+                            <p>Parabéns Você é UM USER Padrão</p>
+                        @endcan
 
-                    {{ __('You are logged in!') }}
+                    
+
                 </div>
             </div>
         </div>

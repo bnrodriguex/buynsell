@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categoria;
+use App\Models\Anuncio;
 
 class CategoriaController extends Controller
 {
@@ -12,10 +13,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categorias = Categoria::orderBy('id', 'ASC')->get();
-        
-       //dd($categorias);
-
+        $categorias = Categoria::orderBy('id','ASC')->get();
         return view('categoria.categoria_index', compact('categorias'));
     }
 
@@ -24,8 +22,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        // dd('OLÁ');
-        return view ('categoria.categoria_create');
+       return view('categoria.categoria_create');
     }
 
     /**
@@ -33,18 +30,19 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());,
-
         $validated = $request->validate([
-            'nome' => 'required|min:5',
-
+            'nome' => 'required|min:5|alpha:ascii',
+            
+            
         ]);
-
+        
         $categoria = new Categoria();
         $categoria->nome = $request->nome;
-        $categoria-> save();
+        $categoria->save();
 
-        return redirect()->route('categoria.index')->with('mensagem', 'Categoria cadastrada com sucesso!');
+        //dd($request->all());
+
+        return redirect()->route('categoria.index')->with('mensagem', 'Categoria cadastrada com sucesso.');
     }
 
     /**
@@ -52,9 +50,9 @@ class CategoriaController extends Controller
      */
     public function show(string $id)
     {
-        // dd('show:'. $id);
+        //dd('ENTRASTES NO LOCAL CERTO ' . $id);
         $categoria = Categoria::find($id);
-        return view('categoria.categoria_show', compact('categoria'));
+        return view ('categoria.categoria_show', compact ('categoria'));
     }
 
     /**
@@ -62,9 +60,8 @@ class CategoriaController extends Controller
      */
     public function edit(string $id)
     {
-        $categoria = Categoria::find($id);
-        return view('categoria.categoria_edit', compact('categoria'));
-
+        $categoria= Categoria::find($id);
+        return view ('categoria.categoria_edit',compact('categoria'));
     }
 
     /**
@@ -72,19 +69,17 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
-        
-        
         $validated = $request->validate([
-            'nome' => 'required|min:5',
+            'nome' => 'required|min:5|alpha:ascii',
 
         ]);
 
         $categoria = Categoria::find($id);
-        $categoria->nome =  $request->nome;
+        $categoria->nome = $request->nome;
         $categoria->save();
 
-        return redirect()->route('categoria.index')->with('mensagem', 'Categoria alterada com sucesso!');
+        return redirect()->route('categoria.index')->with('mensagem', 'Categoria alterada com sucesso.');
+
     }
 
     /**

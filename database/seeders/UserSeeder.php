@@ -19,16 +19,19 @@ class UserSeeder extends Seeder
             'name' => 'César M',
             'email' => 'cmn@cmn.com',
             'password' => Hash::make('123456789'),
+            'perfil' => 'admin',
         ]);
         DB::table('users')->insert([
             'name' => 'Brandon A',
             'email' => 'bar@bar.com',
             'password' => Hash::make('123456789'),
+            'perfil' => 'padrao',
         ]);
         DB::table('users')->insert([
             'name' => 'André Neves',
-            'email' => 'andr@andr.com.br',
+            'email' => 'andr@andr.com',
             'password' => Hash::make('123456789'),
+            'perfil' => 'padrao',
         ]);
     }
 }
