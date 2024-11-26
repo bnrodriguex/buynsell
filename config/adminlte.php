@@ -66,7 +66,7 @@ return [
     */
 
     'logo' => '<b class="custom-logo">Buy N´Sell</b>',
-    'logo_img' => 'images/logobuynsell.svg',    
+    'logo_img' => 'images/logobuynsell.svg',
     'logo_img_class' => 'brand-image img-circle elevation-5',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
