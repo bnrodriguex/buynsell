@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\AnuncioController;
 use App\Http\Controllers\FeedController;
-//use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\PerfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,13 +83,12 @@ Route::middleware(['auth'])->group(function () {
 
 
         //--------------------PERFIL---------------------------\\
-        /*
+        
         Route::get('/perfil' , [PerfilController::class, 'index'])->name('perfil.index');
 
         Route::get('/perfil/create', [PerfilController::class, 'create'])->name('perfil.create');
 
         Route::get('perfil/{perfil}/edit', [PerfilController::class, 'edit'])->name('perfil.edit');
-        */
 
 
 
