@@ -34966,14 +34966,14 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .login-logo a,
 .register-logo a {
-  color: #495057;
+  color: #3E007D;
 }
 
 .login-page,
 .register-page {
   -ms-flex-align: center;
   align-items: center;
-  background-color: #e9ecef;
+  background-color: #3E007D;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;

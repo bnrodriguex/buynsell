@@ -559,9 +559,6 @@ return [
     
     // IMPLEMENTAÇÃO DO CSS
 
-    'css' => [
-        asset('css/custom_Login.css'),  // Adicionando o CSS personalizado
-    ],
 ];
 
 
