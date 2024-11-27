@@ -34958,15 +34958,15 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
 
 .login-logo,
 .register-logo {
-  font-size: 2.1rem;
-  font-weight: 300;
+  font-size: 2.4rem;
+  font-weight: 500;
   margin-bottom: .9rem;
   text-align: center;
 }
 
 .login-logo a,
 .register-logo a {
-  color: #3E007D;
+  color: #E1B545;
 }
 
 .login-page,
@@ -35054,7 +35054,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   border-bottom-right-radius: 0.25rem;
   border-left: 0;
   border-top-right-radius: 0.25rem;
-  color: #777;
+  color: #E1B545;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -53010,9 +53010,4 @@ a.text-muted:hover {
   border-color: #4b545c !important;
 }
 
-.custom-logo {
-  color: yellow;
-  font-weight: bold;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
-}
 /*# sourceMappingURL=adminlte.css.map */
